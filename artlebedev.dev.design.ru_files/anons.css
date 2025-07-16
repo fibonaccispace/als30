@@ -1,0 +1,397 @@
+html, body {
+  height: auto;
+  min-height: 100%;
+}
+
+.announce__text > h2 {
+  margin: 1.5em 0 0.8em;
+}
+
+
+/*наложкние маски на картику
+^picture_with_mask[image;mask]*/
+
+.announce__masked-image {
+  position: relative;
+  width: 100%;
+}
+
+.announce__masked-image svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* отступ в размерах × */
+
+span.oo {
+    padding-left: 1.5pt;
+    padding-right: 1.5pt;
+}
+
+
+/* фавиконка в анонсах сайтов */
+
+.announce__text .body_link{
+  margin-left: -20px;
+}
+@media (max-width: 880px) {
+  .announce__text .body_link{
+    margin-left: 0;
+  }
+}
+
+/* серая рамка */
+
+.with-border img{
+	border: 1px solid #cdcdcd;
+}
+
+
+/* ютуб в процессах */
+
+.video_process{
+  max-width: 960px;
+    margin: 20px auto;
+}
+.video_process_container {
+    position: relative;
+    padding-bottom: 56.25%;
+  height: 0; overflow: hidden;
+}
+
+.video_process_container iframe,
+.video_process_container object,
+.video_process_container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* клоны */
+
+.als_clones .announce__picture-note{
+	padding-bottom: 22px;
+	padding-left: 0;
+}
+.als_clones .announce__picture-note.clone{
+	padding-bottom: 22px;
+	padding-left: 0;
+}
+.als_clones .clones_sheep img{
+	padding-right: 12px;
+	margin-left: -35px;
+}
+.als_clones .clones_sheep, .clones_sheep_descr{
+	display: table-cell;
+	vertical-align: top;
+}	
+@media(max-width: 500px){		
+	.als_clones .announce__picture-note.clone{
+		margin: 20px 22px 10px 0;
+		padding-left: 22px;
+	}
+	.als_clones .announce__picture-note{
+		padding-left: 22px;
+	}
+	.als_clones .clones_sheep img{
+		margin-left: 0;
+	}
+}
+
+
+
+/* вектор (https://www.artlebedev.ru/rpl/logo/vector/) */
+
+.als_vector_2018{
+    max-width: 1200px;
+    margin: 30px auto;
+    position: relative;
+}
+.als_vector_2018 .thumbnail{
+  padding: 0 22px;
+  margin: 0;
+  display: inline-block;
+  float: none;
+  text-align: left;
+  vertical-align: bottom;
+  height: auto;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.als_vector_2018 .thumbnail img{
+  margin: 4px auto;
+  width: 100%;
+  height: auto;
+}
+.als_vector_2018 .date {
+    font-size: 70%;
+    color: #555555;
+    line-height: 120%;
+    margin-top: 6px;
+}
+.als_vector_2018 a{
+  border: none;
+}
+
+/* хайрезы (https://www.artlebedev.ru/averia/hi-res/) */
+.als_hires_2018 a{
+  border-bottom: none !important;
+}
+.als_hires_2018{
+    max-width: 960px;
+    margin: 60px auto 0;
+    padding: 0;
+    position: relative;
+}
+.als_hires_2018 .thumbnail{
+  padding: 0 22px;
+  margin: 0;
+  display: inline-block;
+  float: none;
+  text-align: left;
+  vertical-align: bottom;
+  height: auto;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.als_hires_2018 .thumbnail img{
+  margin: 0 auto;
+  }
+.als_hires_2018:after{
+  content: '';
+    display: block;
+    clear: both;
+}
+.date {
+    font-size: 70%;
+    color: #555555;
+    line-height: 120%;
+    margin-top: 6px;
+}
+
+/* браузеры в анонсах (https://www.artlebedev.ru/sberbank/virtual-school/) */
+/* исходник рядом _browser.scss */
+
+.als-browser {
+  display: block !important;
+  overflow: hidden;
+  margin: 0 auto;
+  text-decoration: none;
+  user-select: none;
+}
+
+.als-browser__content > img,
+.als-browser__content > video,
+.als-browser__content > iframe,
+.als-browser__content > object,
+.als-browser__content > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.als-browser_desktop {
+  max-width: 1200px;
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
+  box-shadow: 0 30px 140px -50px rgba(44, 48, 56, 0.5);
+}
+
+@media (max-width: 960px) {
+  .als-browser_desktop {
+    border-radius: 3px;
+  }
+}
+
+.als-browser_desktop .als-browser__topbar {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: #2c3038;
+}
+
+@media (max-width: 960px) {
+  .als-browser_desktop .als-browser__topbar {
+    height: 20px;
+  }
+}
+
+.als-browser_desktop .als-browser__address {
+  display: flex;
+  width: 75%;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: #fff;
+  font-family: "ALSArtemiusSans", Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .als-browser_desktop .als-browser__address {
+    height: 12px;
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 960px) {
+  .als-browser_desktop .als-browser__address-text {
+    display: none;
+  }
+}
+
+.als-browser_small {
+  max-width: 916px;
+  border-radius: 3px;
+}
+
+.als-browser_small .als-browser__topbar {
+  height: 20px;
+}
+
+.als-browser_small .als-browser__address {
+  height: 12px;
+  border-radius: 2px;
+}
+
+.als-browser_small .als-browser__address-text {
+  display: none;
+}
+
+.als-browser_tablet {
+  position: relative;
+  max-width: 800px;
+  background: url("../tablet-browser.svg") 0 0/100% auto no-repeat;
+}
+
+.als-browser_tablet::before {
+  display: block;
+  padding-top: 144%;
+  content: '';
+}
+
+.als-browser_tablet .als-browser__topbar {
+  position: absolute;
+  top: 2.08333%;
+  left: 10%;
+  width: 80%;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  font-family: "ALSArtemiusSans", Helvetica, sans-serif;
+}
+
+.als-browser_tablet .als-browser__content {
+  position: absolute;
+  top: 5.55556%;
+  left: 2%;
+  overflow: hidden;
+  width: 96%;
+  height: 88.88889%;
+}
+
+.als-browser_mobile {
+  position: relative;
+  max-width: 391px;
+  background: url("../mobile-browser.svg") 0 0/100% auto no-repeat;
+}
+
+.als-browser_mobile::before {
+  display: block;
+  padding-top: 204.60358%;
+  content: '';
+}
+
+.als-browser_mobile .als-browser__topbar {
+  position: absolute;
+  top: 1.5%;
+  left: 10%;
+  width: 80%;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  font-family: "ALSArtemiusSans", Helvetica, sans-serif;
+}
+
+.als-browser_mobile .als-browser__content {
+  position: absolute;
+  top: 5%;
+  left: 2.04604%;
+  overflow: hidden;
+  width: 95.90793%;
+  height: 90%;
+}
+
+
+/* стили для переходных мобилок */
+.mobile-browser {
+  overflow: hidden;
+  width: 100%;
+  max-width: 391px;
+  background: #2c3038;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 30px 140px -50px rgba(44, 48, 56, 0.5);
+          box-shadow: 0 30px 140px -50px rgba(44, 48, 56, 0.5);
+}
+.mobile-browser__content {
+  position: relative;
+  overflow: hidden;
+  margin: 8px;
+  border-radius: 6px;
+}
+.mobile-browser__content::before {
+  display: block;
+  padding-top: 209.06667%;
+  content: "";
+}
+.mobile-browser__content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* однопиксельный серый бордер */
+.pic-with-border{
+	border: 1px solid #cdcdcd;
+}
+
+/* кнопка анонса снизу https://www.artlebedev.ru/type/horizont/ */
+.footer_button a.magazinus-button {
+    background-color: #9BFF00;
+    font-size: 8vw;
+}
+.footer_button a.magazinus-button span {
+    padding: 0.5em 0.5em 0.3em; 
+}
+.footer_button a.magazinus-button:hover {
+    background: #C12AAF !important;
+}
+
+
+/* заголовок в прессе */
+
+.announce__text .process h3{
+	font-weight: bold;
+}
+
+.announce__text .process h3 span{
+	display: inline-block;
+	padding-bottom: 2em;
+}
