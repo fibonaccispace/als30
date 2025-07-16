@@ -1,0 +1,621 @@
+@auto[]
+$Anons[^Anons::create[
+#   $.h1[ЦАТЬ]
+    $.content[^self.anons_content[]]
+    $.credits[^self.print_credits[]]
+    $.cover[
+#       $.img[project_cover.jpg]
+        $.white(true)
+#       $.whiteBg(true)
+    ]
+    $.nav[
+        $.tabs[../stolbus.p]
+        $.title[]
+    ]
+]]
+
+@main[]
+^Anons.print[]
+
+
+@print_credits[]
+<div class="column-wrapper">
+    <div class="column">
+        <h4>арт-директор</h4>
+        <ul>
+            <li>^worker[gerasimchuk]</li>
+        </ul>
+    </div>
+    <div class="column">
+        <h4>старший дизайнер</h4>
+        <ul>
+            <li>^worker[bogdanyukin]</li>
+        </ul>
+    </div>
+</div>
+
+<div class="column-wrapper">
+    <div class="column">
+        <h4>дизайнеры</h4>
+        <ul>
+            <li>Сережа Навасардян</li>
+            <li>Матвей Рогов</li>
+        </ul>
+    </div>
+</div>
+
+
+@anons_content[]
+<style>
+
+.main__logo-video {
+    width: 100%;
+}
+
+.credits {
+    background: black;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+ @font-face {
+        font-family: als_enormous_sb;
+        src: url(media/ALSEnormous-SemiBold.woff2);
+    }
+
+ @font-face {
+        font-family: als_enormous_r;
+        src: url(media/ALSEnormous-Regular.woff2);
+    }
+
+ @font-face {
+        font-family: als_enormous_m;
+        src: url(media/ALSEnormous-Medium.woff2);
+    }
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.history-block__header,
+.date-wrapper span {
+    font-family: als_enormous_sb;
+}
+p.main__logo-description {
+    font-family: als_enormous_r;
+}
+.main__logo-be-history {
+    transform: translateY(-25px);
+    font-family: als_enormous_m;
+    font-size: 21px;
+    text-align: center;
+}
+
+.main__logo-be-history {
+    background: white;
+    color: black;
+    border-radius: 100px;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.main__logo-be-history:hover {
+    box-shadow: 0 20px 90px 0 white;
+}
+
+.bg-video.loaded {
+    opacity: 1;
+}
+
+article.announce {
+    background: none;
+}
+
+body {
+    background: black;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+}
+
+article {
+    padding: 0 20px;
+}
+
+.history-block__image-wrapper {
+    position: relative;
+}
+
+.history-block__image-wrapper .history-block__image {
+    max-width: 100% !important;
+    display: block;
+}
+
+.history-block {
+    /* transition: .1s linear; */
+    overflow: hidden;
+    position: relative;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history-block .history-block__header {
+    max-width: 672px;
+    margin-top: 21px;
+    font-size: 48px;
+    text-align: center;
+}
+
+ @media (max-width: 425px) {
+    .history-block .history-block__header {
+        font-size: 22px;
+    }
+
+    .history-block .history-block__image {
+        margin-top: 50px;
+    }
+
+    .date-wrapper img {
+        width: 70%;
+    }
+
+    .date-wrapper span {
+        font-size: 18px;
+    }
+
+    p.main__logo-description {
+        font-size: 7px;
+    }
+}
+
+.history-block .history-block__image {
+    margin-top: 80px;
+    max-width: 80%;
+}
+
+.history-block .history-block__image-helper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.date-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-wrapper span {
+    position: absolute;
+    font-weight: 130;
+    font-size: 24px;
+}
+
+.main__logo {
+    height: 100vh;
+    margin-bottom: 40vh;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p.main__logo-description {
+    transform: translateY(-100px);
+    max-width: 950px;
+    font-weight: 50;
+    font-size: 21px;
+    text-align: center;
+    z-index: 1;
+}
+
+.main__logo .main__logo-image {
+    width: 100%;
+    display: block;
+}
+
+.main__logo .main__particles-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main__logo .main__particles-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.paralax__list {
+    left: 0;
+    top: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.paralax__item {
+    transition: .4s ease;
+    position: absolute;
+    will-change: transform;
+    width: 32px;
+    aspect-ratio: 1/1;
+}
+</style>
+
+<video autoplay muted loop playsinline class="bg-video" id="background__video">
+    <source src="media/background.mp4" type="video/mp4">
+</video>
+
+<div class="paralax__list" id="paralax__list"></div>
+
+<article class="main__logo">
+    <video autoplay muted loop playsinline class="main__logo-video">
+        <source src="media/txt-alpha-v1.webm" type="video/webm">
+    </video>
+    <div class="main__particles-list" id="particles-list"></div>
+    <p class="main__logo-description">Когда мы&nbsp;начинали, интернет только учился ходить. За&nbsp;тридцать лет, наш дизайн стал голосом брендов, лицом событий, частью культурного контекста. Тридцать лет назад мы&nbsp;начали с&nbsp;идей, которые опережали свое время. Сегодня&nbsp;&mdash; мы&nbsp;стали частью истории дизайна. В&nbsp;этом шоуриле&nbsp;&mdash; наша история. В&nbsp;каждом кадре&nbsp;&mdash; работа, за&nbsp;которой стоят талант, мастерство и&nbsp;годы опыта. Это наш вклад в&nbsp;историю дизайна.</p>
+    <div class="main__logo-be-history">Стать частью истории</div>
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2004</span>
+    </div>
+    <h2 class="history-block__header">
+        Логотип &laquo;Яндекса&raquo;
+    </h2>
+    <img class="history-block__image" src="media/yandex.png" alt="Логотип «Яндекса»">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2004</span>
+    </div>
+    <h2 class="history-block__header">
+        Логотип &laquo;Ростсельмаша&raquo;
+    </h2>
+    <img class="history-block__image" src="media/rostselmash.png" alt="Логотип «Ростсельмаша»">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2005</span>
+    </div>
+    <h2 class="history-block__header">
+        Микроволновые печи &laquo;Самсунг &bdquo;Свитхарт&ldquo;&raquo;
+    </h2>
+    <div class="history-block__image-wrapper">
+        <img class="history-block__image" src="media/microwave.png" alt="Микроволновые печи «Самсунг „Свитхарт“»">
+        <img src="media/microwave1.png" class="history-block__image-helper" style="width: 380px; left: 85%; top: 50%; transform: translate(0, -50%);">
+        <img src="media/microwave2.png" class="history-block__image-helper" style="width: 380px; left: 15%; top: 50%; transform: translate(-100%, -85%);">
+    </div>
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2006</span>
+    </div>
+    <h2 class="history-block__header">
+        Пульт BBK
+    </h2>
+    <img width="460" class="history-block__image" src="media/bbk.png" alt="Пульт BBK">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2007</span>
+    </div>
+    <h2 class="history-block__header">
+        Плакат кинофильма &laquo;Груз 200&raquo;
+    </h2>
+    <img class="history-block__image" src="media/200.png" alt="Плакат кинофильма &laquo;Груз 200&raquo;">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2008</span>
+    </div>
+    <h2 class="history-block__header">
+        Дорожный знак &laquo;Фары и&nbsp;ремень&raquo;
+    </h2>
+    <img class="history-block__image" src="media/board.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2009</span>
+    </div>
+    <h2 class="history-block__header">
+        Логотип Перми
+    </h2>
+    <img class="history-block__image" src="media/perm.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2011</span>
+    </div>
+    <h2 class="history-block__header">
+        Знак &laquo;Фотографировать разрешено&raquo;
+    </h2>
+    <img class="history-block__image" src="media/photo.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2012</span>
+    </div>
+    <h2 class="history-block__header">
+        Парк Горького
+    </h2>
+    <img class="history-block__image" src="media/park.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2013</span>
+    </div>
+    <h2 class="history-block__header">
+        Знак рубля
+    </h2>
+    <img class="history-block__image" src="media/rubl.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2013</span>
+    </div>
+    <h2 class="history-block__header">
+        Знаки возрастных ограничений
+    </h2>
+    <img class="history-block__image" src="media/18+.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2014</span>
+    </div>
+    <h2 class="history-block__header">
+        Аэропорт &laquo;Пулково&raquo;
+    </h2>
+    <img class="history-block__image" src="media/pulkovo.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2014</span>
+    </div>
+    <h2 class="history-block__header">
+        Московское метро
+    </h2>
+    <img class="history-block__image" src="media/metro.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2014</span>
+    </div>
+    <h2 class="history-block__header">
+        Уличные указатели в&nbsp;Москве
+    </h2>
+    <img class="history-block__image" src="media/board2.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2014</span>
+    </div>
+    <h2 class="history-block__header">
+        Логотип &laquo;Якитории&raquo;
+    </h2>
+    <img class="history-block__image" src="media/ykt.png">
+</article>
+
+<article class="history-block">
+    <div class="date-wrapper">
+        <img src="media/date_bg.svg">
+        <span>2014</span>
+    </div>
+    <h2 class="history-block__header">
+        Вертолет &laquo;Скаут&raquo;
+    </h2>
+    <img class="history-block__image" src="media/helicopter.png" style="position: relative; transform: translate(0, -22%);">
+</article>
+
+<script>
+    const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
+    const uniform = (min, max) => Math.random() * (max - min) + min
+
+    const wrapper = document.getElementById('particles-list')
+    const paralaxList = document.getElementById('paralax__list')
+    const video = document.getElementById('background__video')
+    const items = []
+    let startParalaxItem = window.innerHeight*1.05
+    let heightOfSite = document.documentElement.scrollHeight
+    const stepBetweenParalaxItem = 100
+    // console.log(heightOfSite)
+
+    video.addEventListener('canplaythrough', () => {
+        video.classList.add('loaded')
+    })
+
+    const images = [
+        'item1.png', 'item2.png', 'item3.png', 'item4.png', 
+        'item5.png', 'item6.png', 'item7.png', 'item8.png', 
+        'item9.png', 'item10.png', 'item11.png', 'item12.png', 
+        'item13.png', 'item14.png', 'item15.png', 'item16.png', 
+        'item17.png', 'item18.png', 'item19.png', 'item20.png', 
+    ]
+
+    const positions = [
+        { x: 80, y: 30, z: 1 }, { x: 50, y: 42, z: 1 }, { x: 72, y: 45, z: 1 }, { x: 12, y: 71, z: 1 },
+        { x: 32, y: 91, z: 1 }, { x: 47, y: 95, z: 1 }, { x: 61, y: 89, z: 1 }, { x: 56, y: 17, z: 1 },
+        { x: 28, y: 32, z: -1 }, { x: 69, y: 29, z: 1 }, { x: 40, y: 18, z: 1 }, { x: 55, y: 55, z: 1 },
+        { x: 12, y: 32, z: 1 }, { x: 51, y: 83, z: 1 }, { x: 73, y: 85, z: 1 }, { x: 30, y: 66, z: 1 }, 
+        { x: 69, y: 96, z: 1 }, { x: 87, y: 83, z: 1 }, { x: 19, y: 84, z: 1 }, { x: 30, y: 13, z: 1 },
+    ]
+
+    const historyBlocks = document.querySelectorAll('.history-block')
+
+    const offset = random(0, images.length)
+    for(let i = 0; i < images.length; i++){
+        const path = images[i]
+        const index = (i+offset)%positions.length
+        const rotate = uniform(-30, 30)
+        const scale = uniform(0.5, 1)
+
+        const item = document.createElement('img')
+        item.src = 'media/'+path
+        item.classList.add('main__particles-item')
+        item.style.position = 'absolute'
+        item.style.top = positions[index].y + '%'
+        item.style.left = positions[index].x + '%'
+        item.style.zIndex = positions[index].z
+        item.style.transform = 'translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ')'
+        item.style.webkitTransform = item.style.transform
+        item.style.opacity = 0
+        item.style.width = '0px'
+        item.style.height = '0px'
+        item.style.transition = 'all .5s ease'
+        item.style.webkitTransition = 'all .5s ease'
+
+        setTimeout(() => {
+            item.style.opacity = 1
+            item.style.width = '32px'
+            item.style.height = '32px'
+        }, random(100, 500))
+
+        const style = document.createElement('style')
+        const keyframes =
+        '@keyframes floatItem' + index + ' {' +
+            '0% { transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-40, 41) + 'px,' + random(-40, 41) + 'px) rotate(' + uniform(-20, 20) + 'deg) }' +
+            '25% { transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-40, 41) + 'px,' + random(-40, 41) + 'px) rotate(' + uniform(-20, 20) + 'deg) }' +
+            '50% { transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-40, 41) + 'px,' + random(-40, 41) + 'px) rotate(' + uniform(-20, 20) + 'deg) }' +
+            '75% { transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-40, 41) + 'px,' + random(-40, 41) + 'px) rotate(' + uniform(-20, 20) + 'deg) }' +
+            '100% { transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-40, 41) + 'px,' + random(-40, 41) + 'px) rotate(' + uniform(-20, 20) + 'deg) }' +
+        '}' +
+        '@-webkit-keyframes floatItem' + index + ' {' +
+            '0% { -webkit-transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-20, 21) + 'px,' + random(-20, 21) + 'px) rotate(' + uniform(-10, 10) + 'deg) }' +
+            '25% { -webkit-transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-20, 21) + 'px,' + random(-20, 21) + 'px) rotate(' + uniform(-10, 10) + 'deg) }' +
+            '50% { -webkit-transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-20, 21) + 'px,' + random(-20, 21) + 'px) rotate(' + uniform(-10, 10) + 'deg) }' +
+            '75% { -webkit-transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-20, 21) + 'px,' + random(-20, 21) + 'px) rotate(' + uniform(-10, 10) + 'deg) }' +
+            '100% { -webkit-transform: translate(-50%,-50%) rotate(' + rotate + 'deg) scale(' + scale + ') translate(' + random(-20, 21) + 'px,' + random(-20, 21) + 'px) rotate(' + uniform(-10, 10) + 'deg) }' +
+        '}'
+
+        style.textContent = keyframes
+        document.head.appendChild(style)
+
+        item.style.animation = 'floatItem' + index + ' ' + random(10, 30) + 's infinite alternate'
+        item.style.webkitAnimation = item.style.animation
+
+        wrapper.append(item)
+    }
+
+    for(let i = startParalaxItem; 
+        i < document.documentElement.scrollHeight; 
+        i+= stepBetweenParalaxItem) {
+        addParalaxItem(i)
+    }
+
+    // ДЛЯ ЧАСТИЦ НА ВСЕМ ПУТИ САЙТА
+    let throttle = false
+    window.addEventListener('scroll', () => {
+        if (throttle) return
+        throttle = true
+
+        setTimeout(() => {
+            const scroll = window.scrollY
+            items.forEach(item => {
+                const newTransform = 'translate(-50%,-50%) translateY('+(-scroll * item.speed)+'px) rotate('+(item.rotate + scroll*.03 * item.side)+'deg)'
+                item.element.style.transform = newTransform
+                item.element.style.zIndex = item.z
+            })
+            throttle = false
+        }, 200)
+    })
+
+    window.addEventListener('scroll', () => {
+        historyBlocks.forEach((hb, i)=>{
+            const height = window.innerHeight
+            const distToTop = hb.getBoundingClientRect().top
+            const diff = height - distToTop
+            const positive = Math.max(diff,0)
+            const norm = positive/height
+            const borderedNormalizeScale = Math.min(Math.max(.5,norm+0.5),1)
+            hb.style.transform = 'scale('+borderedNormalizeScale+')'
+        })
+    })
+
+    function addParalaxItem(height){
+        const item = document.createElement('img')
+        const rotate = uniform(-30, 30)
+        item.classList.add('paralax__item')
+        item.src = 'media/'+images[random(0,images.length)]
+        item.style.width = 32 + 'px'
+        item.style.height = 32 + 'px'
+        item.style.top = height + 'px'
+        item.style.left = random(10, 90) + '%'
+        item.style.transform = 'translate(-50%,-50%) rotate(' + rotate + 'deg)'
+        item.style.webkitTransform = item.style.transform
+        paralaxList.append(item)
+
+        const z = random(-1,2)
+        const speed = uniform(.8,2)
+        items.push({
+            element: item, rotate, z, speed, side: random(0,100)>50?-1:2,
+        })
+    }
+     
+</script>
+
