@@ -288,6 +288,23 @@ p.main__logo-description {
 
 <div class="paralax__list" id="paralax__list"></div>
 
+
+<style>
+.main__logo {
+    /* position: fixed; */
+    /* animation: showing 2s ease-out forwards; */
+}
+@keyframes showing {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+</style>
 <article class="main__logo">
     <video autoplay muted loop playsinline class="main__logo-video">
         <source src="media/txt-alpha-v1.webm" type="video/webm">
@@ -618,7 +635,7 @@ p.main__logo-description {
         lastY = scroll
         
         rotate = window.scrollY / 30
-        video.style.filter = 'hue-rotate('+rotate+'deg) blur(5px) contrast('+(150+diff/2)+'%) brightness('+(100+diff)+'%)'
+        video.style.filter = 'hue-rotate('+rotate+'deg) blur(5px) contrast('+(150+Math.abs(diff)/2)+'%) brightness('+(100+Math.abs(diff))+'%)'
         video.style.transform = 'scale('+(1+window.scrollY/20000)+')'
 
         items.forEach(item => {
