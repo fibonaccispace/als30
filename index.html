@@ -1,4 +1,4 @@
-@auto[]
+<!-- @auto[]
 $Anons[^Anons::create[
 #   $.h1[ЦАТЬ]
     $.content[^self.anons_content[]]
@@ -45,11 +45,15 @@ $Anons[^Anons::create[
 </div>
 
 
-@anons_content[]
+@anons_content[] -->
 <style>
 
 .main__logo-video {
     width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .credits {
@@ -89,7 +93,8 @@ $Anons[^Anons::create[
     object-fit: cover;
     z-index: -1;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 2s ease;
+    filter: hue-rotate(0deg) blur(5px) contrast(150%);
 }
 
 .history-block__header,
@@ -149,7 +154,7 @@ article {
 }
 
 .history-block {
-    /* transition: .1s linear; */
+    transition: scale .3s ease-out;
     overflow: hidden;
     position: relative;
     margin-top: 20vh;
@@ -270,10 +275,9 @@ p.main__logo-description {
 }
 
 .paralax__item {
-    transition: .4s ease;
     position: absolute;
     will-change: transform;
-    width: 32px;
+    width: 3px;
     aspect-ratio: 1/1;
 }
 </style>
@@ -293,28 +297,38 @@ p.main__logo-description {
     <div class="main__logo-be-history">Стать частью истории</div>
 </article>
 
-<article class="history-block">
-    <div class="date-wrapper">
-        <img src="media/date_bg.svg">
-        <span>2004</span>
-    </div>
-    <h2 class="history-block__header">
-        Логотип &laquo;Яндекса&raquo;
-    </h2>
-    <img class="history-block__image" src="media/yandex.png" alt="Логотип «Яндекса»">
-</article>
+<style>
+.perspective {
+    perspective: 300px;
+}
+</style>
+<div class="perspective">
+    <article class="history-block">
+        <div class="date-wrapper">
+            <img src="media/date_bg.svg">
+            <span>2004</span>
+        </div>
+        <h2 class="history-block__header">
+            Логотип &laquo;Яндекса&raquo;
+        </h2>
+        <img class="history-block__image" src="media/yandex.png" alt="Логотип «Яндекса»">
+    </article>
+</div>
 
-<article class="history-block">
-    <div class="date-wrapper">
-        <img src="media/date_bg.svg">
-        <span>2004</span>
-    </div>
-    <h2 class="history-block__header">
-        Логотип &laquo;Ростсельмаша&raquo;
-    </h2>
-    <img class="history-block__image" src="media/rostselmash.png" alt="Логотип «Ростсельмаша»">
-</article>
+<div class="perspective">
+    <article class="history-block">
+        <div class="date-wrapper">
+            <img src="media/date_bg.svg">
+            <span>2004</span>
+        </div>
+        <h2 class="history-block__header">
+            Логотип &laquo;Ростсельмаша&raquo;
+        </h2>
+        <img class="history-block__image" src="media/rostselmash.png" alt="Логотип «Ростсельмаша»">
+    </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -329,7 +343,9 @@ p.main__logo-description {
         <img src="media/microwave2.png" class="history-block__image-helper" style="width: 380px; left: 15%; top: 50%; transform: translate(-100%, -85%);">
     </div>
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -340,7 +356,9 @@ p.main__logo-description {
     </h2>
     <img width="460" class="history-block__image" src="media/bbk.png" alt="Пульт BBK">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -351,7 +369,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/200.png" alt="Плакат кинофильма &laquo;Груз 200&raquo;">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -362,7 +382,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/board.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -373,7 +395,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/perm.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -384,7 +408,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/photo.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -395,7 +421,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/park.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -406,7 +434,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/rubl.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -417,7 +447,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/18+.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -428,7 +460,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/pulkovo.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -439,7 +473,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/metro.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -450,7 +486,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/board2.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -461,7 +499,9 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/ykt.png">
 </article>
+</div>
 
+<div class="perspective">
 <article class="history-block">
     <div class="date-wrapper">
         <img src="media/date_bg.svg">
@@ -472,6 +512,7 @@ p.main__logo-description {
     </h2>
     <img class="history-block__image" src="media/helicopter.png" style="position: relative; transform: translate(0, -22%);">
 </article>
+</div>
 
 <script>
     const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
@@ -481,8 +522,8 @@ p.main__logo-description {
     const paralaxList = document.getElementById('paralax__list')
     const video = document.getElementById('background__video')
     const items = []
-    let startParalaxItem = window.innerHeight*1.05
-    let heightOfSite = document.documentElement.scrollHeight
+    let startParalaxItem = window.innerHeight*1.5
+    let heightOfSite = startParalaxItem + document.documentElement.scrollHeight
     const stepBetweenParalaxItem = 100
     // console.log(heightOfSite)
 
@@ -569,31 +610,44 @@ p.main__logo-description {
     }
 
     // ДЛЯ ЧАСТИЦ НА ВСЕМ ПУТИ САЙТА
-    let throttle = false
+    let lastY = 0
+    let rotate = 0
     window.addEventListener('scroll', () => {
-        if (throttle) return
-        throttle = true
+        const scroll = window.scrollY
+        const diff = scroll - lastY
+        lastY = scroll
+        
+        rotate = window.scrollY / 30
+        video.style.filter = 'hue-rotate('+rotate+'deg) blur(5px) contrast('+(150+diff/2)+'%) brightness('+(100+diff)+'%)'
+        video.style.transform = 'scale('+(1+window.scrollY/20000)+')'
 
-        setTimeout(() => {
-            const scroll = window.scrollY
-            items.forEach(item => {
-                const newTransform = 'translate(-50%,-50%) translateY('+(-scroll * item.speed)+'px) rotate('+(item.rotate + scroll*.03 * item.side)+'deg)'
-                item.element.style.transform = newTransform
-                item.element.style.zIndex = item.z
-            })
-            throttle = false
-        }, 200)
-    })
-
-    window.addEventListener('scroll', () => {
+        items.forEach(item => {
+            const newTransform = 'translate(-50%,-50%) translateY('+(-scroll * item.speed + item.shift)+'px)'
+            item.element.style.transform = newTransform
+            item.element.style.zIndex = item.z
+            const abs = Math.abs(diff)
+            const minmax = Math.min(Math.max(-50, abs), 50)
+            item.element.style.width = '3px'
+            item.element.style.height = `${minmax*10}px`
+            if(item.element.getBoundingClientRect().top < -400) {
+                item.shift += window.innerHeight*2
+            } else if (item.element.getBoundingClientRect().top > window.innerHeight*2) {
+                item.shift = window.screenY - window.innerWidth*2
+            }
+        })
+        const abs = Math.abs(diff)
+        const negative = 1-abs/500
+        
         historyBlocks.forEach((hb, i)=>{
             const height = window.innerHeight
             const distToTop = hb.getBoundingClientRect().top
             const diff = height - distToTop
             const positive = Math.max(diff,0)
             const norm = positive/height
-            const borderedNormalizeScale = Math.min(Math.max(.5,norm+0.5),1)
-            hb.style.transform = 'scale('+borderedNormalizeScale+')'
+            // const borderedNormalizeScale = 2
+            // hb.style.transform = 'scale('+borderedNormalizeScale/2+')'
+            const rot = Math.min(Math.max(-10, 10-(norm-0.4)*10), 10)
+            hb.style.transform = `rotateX(${rot}deg)`
         })
     })
 
@@ -611,9 +665,9 @@ p.main__logo-description {
         paralaxList.append(item)
 
         const z = random(-1,2)
-        const speed = uniform(.8,2)
+        const speed = uniform(.8,2)*5
         items.push({
-            element: item, rotate, z, speed, side: random(0,100)>50?-1:2,
+            element: item, rotate, z, speed, side: random(0,100)>50?-1:2, shift: 0,
         })
     }
      
