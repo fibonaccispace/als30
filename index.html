@@ -157,7 +157,7 @@ article {
     transition: scale .3s ease-out;
     overflow: hidden;
     position: relative;
-    margin-top: 20vh;
+    margin-top: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,6 +262,7 @@ p.main__logo-description {
 }
 
 .paralax__list {
+    display: none;
     left: 0;
     top: 0;
     position: fixed;
@@ -680,7 +681,7 @@ p.main__logo-description {
             // const borderedNormalizeScale = 2
             // hb.style.transform = 'scale('+borderedNormalizeScale/2+')'
             const rot = Math.min(Math.max(-10, 10-(norm-0.4)*10), 10)
-            hb.style.transform = `rotateX(${rot}deg)`
+            hb.style.transform = `rotateX(${-rot}deg)`
         })
     })
 
